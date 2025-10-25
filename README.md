@@ -31,7 +31,7 @@ Wir freuen uns über Mitwirkung! Jeder kann Aufgaben übernehmen.
 Bitte ein Issue erstellen und mit `[Help Wanted]` kommentieren, wenn du daran arbeitest.
 
 ### **JSON Utils**
-- [ ] `reader.py` → Streaming-Unterstützung für große JSON-Dateien  
+- [x] `reader.py` → Streaming-Unterstützung für große JSON-Dateien  
 - [ ] `writer.py` → Pretty-Print & Unicode-Support verbessern  
 - [ ] `validator.py` → JSON-Schema-Validierung implementieren  
 - [ ] Unit-Tests für alle Funktionen schreiben  
