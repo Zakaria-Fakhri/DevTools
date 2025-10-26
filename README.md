@@ -96,6 +96,6 @@ Bitte ein Issue erstellen und mit `[Help Wanted]` kommentieren, wenn du daran ar
 ## 📥 Installation
 
 ```bash
-git clone https://github.com/DEIN_USERNAME/DevTools.git
+git clone https://github.com/Zakaria-Fakhri/DevTools.git
 cd DevTools
 pip install -e .
