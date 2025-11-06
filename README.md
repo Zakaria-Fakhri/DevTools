@@ -134,7 +134,6 @@ pip install -e .
 
 ## Mitwirken
 
-- Bitte ein Issue erstellen, bevor Du größere Änderungen vornimmst.
 - Fork → Branch → Pull Request mit kurzer Beschreibung.
 - Für neue Funktionen: Beispiel‑Snippet in README oder Modul‑README hinzufügen.
 - Unit‑Tests beilegen (pytest empfohlen).
