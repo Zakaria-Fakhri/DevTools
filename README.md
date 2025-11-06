@@ -1,101 +1,148 @@
+```markdown
 # DevTools Collection
 
-Eine Sammlung von wiederverwendbaren Entwickler-Tools für Python-Projekte.  
-Dieses Repo ist modular aufgebaut, sodass jedes Modul in einem eigenen Unterordner organisiert ist.  
+Eine Sammlung wiederverwendbarer Entwickler‑Tools für Python‑Projekte. Das Repository ist modular aufgebaut — jedes Modul liegt in einem eigenen Unterordner und enthält fokussierte Helferfunktionen.
 
-Ziel ist es, die Entwicklung zu beschleunigen, wiederverwendbare Tools zu sammeln und anderen Entwicklern die Möglichkeit zu geben, aktiv mitzuarbeiten.
-
----
-
-## 📦 Inhalt
-
-| Modul | Funktion |
-|-------|---------|
-| `json_utils` | JSON-Dateien lesen, schreiben, validieren |
-| `excel_utils` | Excel-Dateien lesen, schreiben, formatieren |
-| `csv_utils` | CSV-Dateien lesen & schreiben |
-| `yaml_utils` | YAML-Dateien lesen & schreiben |
-| `api_utils` | HTTP Requests, Retry-Mechanismen, Rate-Limiting |
-| `file_utils` | Dateimanagement, Backups, Duplicate Finder |
-| `logger` | Logging Helper für Projekte |
-| `config_utils` | `.env` Loader, Config Validator |
-| `timer_utils` | Timer, Stopwatch, Laufzeitmessung |
-| `decorator_utils` | Nützliche Decorators: Logging, Retry, Timer |
-| `cli_utils` | Kommandozeilen-Utilities |
+Ziel: Entwicklung beschleunigen, wiederverwendbare Utilities bereitstellen und Mitwirkung erleichtern.
 
 ---
 
-## 🚀 Offene Aufgaben (Open Issues / Help Wanted)
+## Inhalt (Module)
 
-Wir freuen uns über Mitwirkung! Jeder kann Aufgaben übernehmen.  
-Bitte ein Issue erstellen und mit `[Help Wanted]` kommentieren, wenn du daran arbeitest.
-
-### **JSON Utils**
-- [x] `reader.py` → Streaming-Unterstützung für große JSON-Dateien  
-- [ ] `writer.py` → Pretty-Print & Unicode-Support verbessern  
-- [ ] `validator.py` → JSON-Schema-Validierung implementieren  
-- [ ] Unit-Tests für alle Funktionen schreiben  
-
-### **Excel Utils**
-- [ ] `reader.py` → Unterstützung für mehrere Sheets gleichzeitig  
-- [ ] `writer.py` → `.csv` Export implementieren  
-- [ ] `formatter.py` → Automatische Zellformatierung & Styling  
-- [ ] Unit-Tests  
-
-### **CSV Utils**
-- [ ] Encoding-Automatik erkennen (`utf-8`, `latin1`)  
-- [ ] Large-File Handling (Streaming, Chunked-Processing)  
-- [ ] Unit-Tests  
-
-### **YAML Utils**
-- [ ] Reader & Writer erweitern (unterstützt Kommentare beim Schreiben)  
-- [ ] Schema-Validation für Config-Dateien  
-- [ ] Unit-Tests  
-
-### **API Utils**
-- [ ] `requests.py` → Rate-Limiting & Timeout-Handling  
-- [ ] `retry.py` → Exponentielles Backoff bei Fehlversuchen  
-- [ ] OAuth2 Support (Token Refresh, Bearer Token)  
-- [ ] Unit-Tests und Mock-Tests für API Calls  
-
-### **File Utils**
-- [ ] Duplicate File Finder optimieren (hash-basiert)  
-- [ ] Backup-Manager: automatische Sicherung von Ordnern  
-- [ ] File Watcher für Hot Reload  
-- [ ] Unit-Tests  
-
-### **Logger**
-- [ ] Custom Logger mit Rotating File Handler  
-- [ ] Logging-Levels: INFO, DEBUG, WARNING, ERROR  
-- [ ] Unit-Tests  
-
-### **Config Utils**
-- [ ] `.env` Loader erweitern: Type-Parsing & Default Values  
-- [ ] Config Validator für YAML/JSON/ENV  
-- [ ] Unit-Tests  
-
-### **Timer Utils**
-- [ ] Stopwatch & Timer als Context-Manager  
-- [ ] Decorator für Funktionslaufzeit-Messung  
-- [ ] Unit-Tests  
-
-### **Decorator Utils**
-- [ ] Retry Decorator für Funktionen mit HTTP Calls  
-- [ ] Logging Decorator für Debugging  
-- [ ] Timer Decorator für Laufzeit-Statistiken  
-- [ ] Unit-Tests  
-
-### **CLI Utils**
-- [ ] Argument Parsing Helper (`argparse` Wrapper)  
-- [ ] Common Commands für JSON/Excel/CSV/Files  
-- [ ] Beispiel-Skripte für CLI-Nutzung  
-- [ ] Unit-Tests  
+| Modul (Ordner) | Kurzbeschreibung |
+|---|---|
+| `json_utils` | JSON-Dateien lesen, schreiben, Streaming-Unterstützung für große Dateien |
+| `excel_utils` | Excel (.xlsx) lesen/schreiben, Sheet-Handling und Exporthilfen |
+| `csv_utils` | CSV lesen & schreiben, Encoding-Handling, Streaming für große Dateien |
+| `yaml_utils` | YAML lesen & schreiben, Unterstützung für Konfigurationsdateien |
+| `api_utils` | HTTP-Request-Wrapper, Retry-Logik, Rate‑Limiting und Timeout-Helfer |
+| `file_utils` | Dateimanagement, Backup-Utilities, Duplikat‑Finder |
+| `logger` | Projekt‑Logger, Hilfsfunktionen für Logging-Konfiguration |
+| `config_utils` | `.env` Loader, Config-Parsing & Validatoren |
+| `timer_utils` | Timer, Stopwatch, Laufzeit‑Messungen (auch als Context‑Manager) |
+| `decorater_utils` | Nützliche Decorators (Retry, Logging, Timer) — Beachte: Ordnername ist `decorater_utils` |
+| `cli_utils` | Helfer für Kommandozeilen‑Schnittstellen (argparse Wrapper, Common Commands) |
 
 ---
 
-## 📥 Installation
+## ✅ Checkliste: Funktionen nach Modul
+
+Die folgende Checkliste listet typische, erwartete Funktionen für jedes Modul als Ausgangspunkt. Bitte abhaken, wenn eine Funktion implementiert und mit Unit‑Tests versehen ist.
+
+- json_utils
+  - [ ] read_json(path: str) -> dict / iterator (Streaming)
+  - [ ] write_json(obj, path: str, pretty: bool = True, ensure_ascii: bool = False)
+  - [ ] stream_json(path: str) -> generator
+  - [ ] validate_json(instance, schema)
+  - [ ] unit tests für Reader/Writer/Validator
+
+- excel_utils
+  - [ ] read_excel(path: str, sheet: Optional[str|int] = None) -> DataFrame / list
+  - [ ] write_excel(data, path: str, sheet: str = "Sheet1")
+  - [ ] read_multiple_sheets(path: str) -> dict[sheet_name, data]
+  - [ ] export_sheet_to_csv(path: str, sheet: str, csv_path: str)
+  - [ ] apply_formatting(path: str, rules: dict)
+  - [ ] unit tests
+
+- csv_utils
+  - [ ] read_csv(path: str, encoding: Optional[str] = None) -> iterator / DataFrame
+  - [ ] write_csv(data, path: str, encoding: str = "utf-8")
+  - [ ] detect_encoding(path: str) -> str
+  - [ ] stream_csv(path: str, chunk_size: int) -> generator
+  - [ ] unit tests (inkl. large-file tests)
+
+- yaml_utils
+  - [ ] read_yaml(path: str) -> dict
+  - [ ] write_yaml(obj, path: str, preserve_comments: bool = False)
+  - [ ] validate_yaml(instance, schema)
+  - [ ] support for aliase/anchors & comments beim Schreiben
+  - [ ] unit tests
+
+- api_utils
+  - [ ] request(method, url, **kwargs) -> response (Wrapper)
+  - [ ] session_manager() / get_session()
+  - [ ] retry_decorator / retry_logic (exponentielles Backoff)
+  - [ ] rate_limiter (per host / per endpoint)
+  - [ ] oauth2_helper (token refresh)
+  - [ ] timeout handling & mockable tests
+  - [ ] unit tests mit Mock/Responses
+
+- file_utils
+  - [ ] list_files(path, recursive: bool = True) -> generator
+  - [ ] compute_hash(path, algo: str = "sha256") -> str
+  - [ ] find_duplicates(path) -> list[pairs]
+  - [ ] backup_folder(src, dest, keep_n: int = 5)
+  - [ ] watch_folder(path, callback)
+  - [ ] unit tests
+
+- logger
+  - [ ] get_logger(name, level: str = "INFO")
+  - [ ] configure_logging(console: bool = True, file: Optional[str] = None, rotate: bool = True)
+  - [ ] log_to_file_with_rotation(path, max_bytes, backup_count)
+  - [ ] logging_decorator(func)
+  - [ ] unit tests (inkl. Logging-Ausgaben prüfen)
+
+- config_utils
+  - [ ] load_env(path: str = ".env") -> dict
+  - [ ] parse_env_types(values: dict, schema: dict) -> dict
+  - [ ] load_config(path: str) -> dict (support json/yaml)
+  - [ ] validate_config(config, schema)
+  - [ ] unit tests
+
+- timer_utils
+  - [ ] Timer context manager (start/stop, elapsed)
+  - [ ] stopwatch helper
+  - [ ] timeit_decorator(func)
+  - [ ] cumulative timing/statistics collector
+  - [ ] unit tests
+
+- decorater_utils
+  - [ ] retry_decorator(retries: int, backoff: float)
+  - [ ] logging_decorator(verbosity: str)
+  - [ ] timer_decorator
+  - [ ] cache_decorator (optional)
+  - [ ] unit tests
+
+- cli_utils
+  - [ ] build_arg_parser(common_args: list)
+  - [ ] subcommand decorator / helper
+  - [ ] commands for json/csv/excel basic operations
+  - [ ] usage examples / sample entrypoints
+  - [ ] unit tests / integration tests
+
+---
+
+## Offene Aufgaben / Prioritäten
+
+- Priorität A (unbedingt): Unit‑Tests für kritische IO‑Funktionen (JSON/CSV/Excel/HTTP).
+- Priorität B (wichtig): Robustheit bei großen Dateien (Streaming / Chunking).
+- Priorität C (nice‑to‑have): OAuth2, Rate‑Limiting Policies, File Watcher, erweiterte Formatierung.
+
+---
+
+## Installation
+
+Klonen und lokal als editable installieren:
 
 ```bash
 git clone https://github.com/Zakaria-Fakhri/DevTools.git
 cd DevTools
 pip install -e .
+```
+
+---
+
+## Mitwirken
+
+- Bitte ein Issue erstellen, bevor Du größere Änderungen vornimmst.
+- Fork → Branch → Pull Request mit kurzer Beschreibung.
+- Für neue Funktionen: Beispiel‑Snippet in README oder Modul‑README hinzufügen.
+- Unit‑Tests beilegen (pytest empfohlen).
+
+---
+
+## Lizenz
+
+Siehe LICENSE im Repository.
+
+```
