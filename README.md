@@ -1,4 +1,4 @@
-```markdown
+
 # DevTools Collection
 
 Eine Sammlung wiederverwendbarer Entwickler‑Tools für Python‑Projekte. Das Repository ist modular aufgebaut — jedes Modul liegt in einem eigenen Unterordner und enthält fokussierte Helferfunktionen.
