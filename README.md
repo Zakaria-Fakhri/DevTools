@@ -143,5 +143,5 @@ pip install -e .
 ## Lizenz
 
 Siehe LICENSE im Repository.
-
+MIT
 ```
