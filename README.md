@@ -30,7 +30,7 @@ Ziel: Entwicklung beschleunigen, wiederverwendbare Utilities bereitstellen und M
 Die folgende Checkliste listet typische, erwartete Funktionen für jedes Modul als Ausgangspunkt. Bitte abhaken, wenn eine Funktion implementiert und mit Unit‑Tests versehen ist.
 
 - json_utils
-  - [ ] read_json(path: str) -> dict / iterator (Streaming)
+  - [x] read_json(path: str) -> dict / iterator (Streaming)
   - [ ] write_json(obj, path: str, pretty: bool = True, ensure_ascii: bool = False)
   - [ ] stream_json(path: str) -> generator
   - [ ] validate_json(instance, schema)
