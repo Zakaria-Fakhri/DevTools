@@ -31,9 +31,9 @@ Die folgende Checkliste listet typische, erwartete Funktionen für jedes Modul a
 
 - json_utils
   - [x] read_json(path: str) -> dict / iterator (Streaming)
-  - [ ] write_json(obj, path: str, pretty: bool = True, ensure_ascii: bool = False)
+  - [x] write_json(obj, path: str, pretty: bool = True, ensure_ascii: bool = False)
   - [ ] stream_json(path: str) -> generator
-  - [ ] validate_json(instance, schema)
+  - [x] validate_json(instance, schema)
   - [ ] unit tests für Reader/Writer/Validator
 
 - excel_utils
