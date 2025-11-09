@@ -45,10 +45,10 @@ Die folgende Checkliste listet typische, erwartete Funktionen für jedes Modul a
   - [ ] unit tests
 
 - csv_utils
-  - [ ] read_csv(path: str, encoding: Optional[str] = None) -> iterator / DataFrame
-  - [ ] write_csv(data, path: str, encoding: str = "utf-8")
+  - [x] read_csv(path: str, encoding: Optional[str] = None) -> iterator / DataFrame
+  - [x] write_csv(data, path: str, encoding: str = "utf-8")
   - [ ] detect_encoding(path: str) -> str
-  - [ ] stream_csv(path: str, chunk_size: int) -> generator
+  - [x] stream_csv
   - [ ] unit tests (inkl. large-file tests)
 
 - yaml_utils
